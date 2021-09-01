@@ -13,6 +13,7 @@ document.getElementById("search-field").onkeypress = function (e) {
 const searchBook = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
+  searchField.value =''
   //load spinner
   spinner("block");
   //load api data
@@ -25,8 +26,10 @@ const searchBook = () => {
 const bookResult = (books) => {
   //console.log(singleBook)
   const booksWrapper = document.getElementById("searchresult");
+  //clea search book result
+  booksWrapper.textContent = ''
   books.forEach((book) => {
-    console.log(book);
+    //console.log(book);
     const div = document.createElement("div");
     div.classList.add("col");
     div.innerHTML = `
