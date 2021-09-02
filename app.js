@@ -47,7 +47,7 @@ const bookResult = (books) => {
     const div = document.createElement("div");
     div.classList.add("col");
     div.innerHTML = `
-    <div class="card">
+    <div class="card h-100">
         <div class="card-body">
             <img class="img-fluid card-img-top" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"/>
             <h4 class="card-title">Book Name: ${book.title}</h4>
