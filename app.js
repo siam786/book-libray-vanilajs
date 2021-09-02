@@ -8,6 +8,7 @@ document.getElementById("search-field").onkeypress = function (e) {
     document.getElementById("button-field").click();
   }
 };
+
 //error
 const errorDiv = document.getElementById('error');
 
@@ -30,6 +31,10 @@ const searchBook = () => {
 };
 
 const bookResult = (books) => {
+    //search result 
+const searchShow = document.getElementById('serch-result').innerHTML = `
+<h3 class="text-center py-3">Total Result Found <span class="text-danger">${books.length}</span></h3>
+`
   //console.log(singleBook)
   const booksWrapper = document.getElementById("searchresult");
   //clea search book result
@@ -41,7 +46,7 @@ const bookResult = (books) => {
     div.innerHTML = `
     <div class="card">
         <div class="card-body">
-        <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"/>
+        <img class="img-fluid card-img-top" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"/>
             <h4 class="card-title">Book Name: ${book.title}</h4>
             <h6 class="card-title">Author Name: ${book.author_name}</h6>
             <p class="card-text">First Publish year: 
