@@ -8,16 +8,22 @@ document.getElementById("search-field").onkeypress = function (e) {
     document.getElementById("button-field").click();
   }
 };
+//error
+const errorDiv = document.getElementById('error');
 
 //add book function
 const searchBook = () => {
   const searchField = document.getElementById("search-field");
+  spinner("block");
   const searchText = searchField.value;
+  /*   if(searchText === ''){
+      alert('no')
+    } */
+ 
   searchField.value =''
   //load spinner
-  spinner("block");
   //load api data
-  const url = `http://openlibrary.org/search.json?q=${searchText}`;
+  const url = `https://openlibrary.org/search.json?q=${searchText}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => bookResult(data.docs));
@@ -28,7 +34,7 @@ const bookResult = (books) => {
   const booksWrapper = document.getElementById("searchresult");
   //clea search book result
   booksWrapper.textContent = ''
-  books.forEach((book) => {
+  books?.forEach((book) => {
     //console.log(book);
     const div = document.createElement("div");
     div.classList.add("col");
@@ -49,3 +55,9 @@ const bookResult = (books) => {
     spinner('none')
   });
 };
+/* const imagesrc = bookimage =>{
+    const url = `https://covers.openlibrary.org/b/id/${bookimage}.jpg`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => bookResult(data.docs))
+} */
