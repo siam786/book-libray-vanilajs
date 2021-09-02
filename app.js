@@ -41,6 +41,7 @@ const bookResult = (books) => {
     div.innerHTML = `
     <div class="card">
         <div class="card-body">
+        <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg"/>
             <h4 class="card-title">Book Name: ${book.title}</h4>
             <h6 class="card-title">Author Name: ${book.author_name}</h6>
             <p class="card-text">First Publish year: 
