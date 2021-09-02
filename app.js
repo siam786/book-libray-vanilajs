@@ -56,9 +56,3 @@ const bookResult = (books) => {
     spinner('none')
   });
 };
-/* const imagesrc = bookimage =>{
-    const url = `https://covers.openlibrary.org/b/id/${bookimage}.jpg`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => bookResult(data.docs))
-} */
